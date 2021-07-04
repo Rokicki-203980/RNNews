@@ -35,7 +35,6 @@ function MainFeed( {navigation} ) {
         }).then(function(response)  {
             return response.json();
         }).then(function(data) {
-            console.log(data.value);
             setNews({
                 loading: false,
                 error: false,

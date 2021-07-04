@@ -8,3 +8,5 @@ form:
 let secret = {
     apiKey: 'token'
 };
+
+export default secret
