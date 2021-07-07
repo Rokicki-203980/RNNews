@@ -7,7 +7,7 @@ import NewsList from "../components/NewsList";
 
 function CategoriesFeed( {navigation} ) {
     const [news, setNews] = useState({
-        loading: true,
+        loading: false,
         error: false,
         news: [],
     });
