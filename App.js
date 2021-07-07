@@ -1,29 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MainFeed from "./screens/MainFeed";
 import {NavigationContainer} from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
-import SingleNews from "./screens/SingleNews";
+import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
+import {
+  CategoriesNewsStackScreen,
+  SearchNewsStackScreen,
+  TrendingNewsStackScreen
+} from "./app/navigators/StackNavigators";
+import {StyleSheet} from "react-native";
 
-const Stack = createStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>{
-      <Stack.Navigator>
-        <Stack.Screen name="Feed" component={MainFeed} />
-        <Stack.Screen name="SingleNews" component={SingleNews} />
-      </Stack.Navigator>
-    }</NavigationContainer>
+      <NavigationContainer>{
+        <Tab.Navigator tabBarOptions={{style: styles.tabNavigator}}>
+          <Tab.Screen name="TrendingNews" component={TrendingNewsStackScreen} />
+          <Tab.Screen name="CategoriesNews" component={CategoriesNewsStackScreen} />
+          <Tab.Screen name="SearchNews" component={SearchNewsStackScreen} />
+        </Tab.Navigator>
+      }</NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  tabNavigator: {
+    paddingTop: 20,
   },
 });

@@ -8,7 +8,6 @@ function SingleNews({ route, navigation}) {
         Linking.openURL(url);
     }
 
-    console.log(news.image.url);
     return (
         <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.container}>
             <Text style={styles.title}>{news.title}</Text>
