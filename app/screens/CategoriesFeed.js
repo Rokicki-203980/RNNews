@@ -19,7 +19,6 @@ function CategoriesFeed( {navigation} ) {
             pageNumber: pageNumber,
             pageSize: pageSize,
             withThumbnails: 'false',
-            location: 'us'
         });
         let url = baseNewsSearchURL + params;
 

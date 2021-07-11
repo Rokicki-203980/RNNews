@@ -16,7 +16,6 @@ function TrendingNewsFeed({navigation} ) {
             pageNumber: pageNumber,
             pageSize: pageSize,
             withThumbnails: 'false',
-            location: 'us'
         });
         let url = baseTrendingNewsURL + params;
 
